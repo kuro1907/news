@@ -100,7 +100,7 @@ class ManagerDB
 
     public function createNew($new)
     {
-        $sql = "INSERT INTO news (`title`,`info`,`dayRelease`,`img`,`linkPost`,`isSelected`,`category`,`content`)VALUE (?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO news (`title`,`info`,`dayRelease`,`img`,`linkPost`,`isSelected`,`category`,`content`)VALUE (?, ?, ?, ?, ?, ?, ?, ?);";
         $statement = $this->connection->prepare($sql);
         $statement->bindParam(1, $new->title);
         $statement->bindParam(2, $new->info);
@@ -110,6 +110,17 @@ class ManagerDB
         $statement->bindParam(6, $new->isSelected);
         $statement->bindParam(7, $new->category);
         $statement->bindParam(8, $new->content);
-        return $statement->execute();
+        $test = $statement->execute();
+        var_dump($test);
+        die();
+    }
+
+    public function getId()
+    {
+        $sql = "SELECT id FROM news ORDER BY id DESC LIMIT 1;";
+        $statement = $this->connection->prepare($sql);
+        $statement->execute();
+        $id = $statement->fetchAll();
+        return $id;
     }
 }

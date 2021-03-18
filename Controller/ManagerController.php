@@ -152,6 +152,7 @@ class ManagerController
     public function AddNews()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $idNewest = $this->managerDb->getId();
             include 'View/Manager/showInfoNews.php';
         } else {
             $title          = $_POST['title'];
@@ -165,9 +166,12 @@ class ManagerController
 
             $new = new NewPost($title, $info, $dayRelease, $img, $linkPost, $isSelected, $category, $content);
             $test = $this->managerDb->createNew($new);
+
             if ($test) {
                 $success = 'Đăng bài viết thành công';
                 header('Location:/?controller=manager&action=news');
+            } else {
+                echo 'ngu';
             }
         }
     }

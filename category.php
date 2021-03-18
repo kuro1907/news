@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -42,22 +43,31 @@
     </div>
     <div class="container">
         <div class="row color-title">
-            <h3><?php
-                switch ($ctg) {
-                    case 'update':
-                        echo 'CẬP NHẬT';
-                        break;
-                    case 'event':
-                        echo 'SỰ KIỆN';
-                        break;
-                    case 'promotion':
-                        echo 'KHUYẾN MÃI';
-                        break;
-                    default:
-                        echo 'TIN TỨC';
-                        break;
-                }
-                ?></h3>
+            <div class="category-left">
+                <img src="./img/sub_nav_left.png" alt="" width="100%" height="100%">
+            </div>
+            <div class="title-bg">
+                <h3><?php
+                    switch ($ctg) {
+                        case 'update':
+                            echo 'CẬP NHẬT';
+                            break;
+                        case 'event':
+                            echo 'SỰ KIỆN';
+                            break;
+                        case 'promotion':
+                            echo 'KHUYẾN MÃI';
+                            break;
+                        default:
+                            echo 'TIN TỨC';
+                            break;
+                    }
+                    ?></h3>
+            </div>
+
+            <div class="category-right">
+                <img src="./img/sub_nav_right.png" alt="" width="100%" height="100%">
+            </div>
         </div>
         <?php
         include 'tab-news.php';

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -24,7 +25,32 @@
     <div class="row">
         <img src="./img/R_BS_1920x510_pc.jpg" alt="" width="100%">
     </div>
-    <div class="container top-50 content-bg">
+    <div class="container content-bg">
+        <div class="row category">
+            <div class="category-left">
+                <img src="./img/sub_nav_left.png" alt="" width="100%" height="100%">
+            </div>
+            <div class="category-1">
+                <h4><?php switch ($new->category) {
+                        case 'update':
+                            echo 'Cập nhật >';
+                            break;
+                        case 'promotion':
+                            echo 'Khuyến mãi >';
+                            break;
+                        case 'event';
+                            echo 'Sự kiện >';
+                            break;
+                    }
+                    ?></h4>
+            </div>
+            <div class="category-2">
+                <span><?php echo $new->dayRelease ?></span>
+            </div>
+            <div class="category-right">
+                <img src="./img/sub_nav_right.png" alt="" width="100%" height="100%">
+            </div>
+        </div>
         <div class="row">
             <h3><?php echo $new->title ?></h3>
         </div>

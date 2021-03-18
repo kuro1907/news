@@ -64,12 +64,13 @@ $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : NULL;
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                        <label>Link bài viết :</label>
-                        <input type="text" class="form-control form-control-user" name="linkPost" value="<?php if (isset($new)) echo $new->linkPost; ?>" <?php if ($action == 'detailnews') {
-                                                                                                                                                                echo 'disabled';
-                                                                                                                                                            } ?> required>
-                        <div class="valid-feedback">Hợp lệ.</div>
-                        <div class="invalid-feedback">Vui lòng điền đầy đủ thông tin.</div>
+                        <input type="text" hidden class="form-control form-control-user" name="linkPost" value="<?php if (isset($new)) {
+                                                                                                                    echo $new->linkPost;
+                                                                                                                } else {
+                                                                                                                    echo '/?controller=user&action=post&id=' . ($idNewest[0][0] + 1);
+                                                                                                                } ?>" <?php if ($action == 'detailnews') {
+                                                                                                                            echo 'disabled';
+                                                                                                                        } ?>>
                     </div>
                 </div>
                 <div class="form-group row">

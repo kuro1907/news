@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color:black !important;
+    font-family: "Sofia", sans-serif;
 }
 
 .text{
@@ -97,6 +98,11 @@ footer{
 /* ================ POST ============ */
 .color-title{
     color:#B1AC8E;
+    
+}
+
+.title-bg{
+    background-color: rgb(23,24,26);
 }
 
 .box-post{
@@ -109,6 +115,13 @@ footer{
 .box-title{
     margin-bottom: 4px;
 }
+.carousel-caption{
+    left: 0 !important;
+    right: 0 !important;
+    background: #242426;
+    width: 100%;
+    opacity: 0.9;
+}   
 .box-title a{
     font-size: 22px;
     text-decoration: none;
@@ -127,6 +140,25 @@ footer{
 .content-bg{
     background-color: #242426;
     color: #A6A6A6;
+    padding-top:20px;
+}
+
+.category{
+    height: 60px;
+    padding : 0px 30px;
+    
+}
+
+.category-1 {
+    background-color: rgb(23,24,26);
+    color:#B1AC8E ;
+    padding-top: 15px;
+}
+.category-2{
+    background-color: rgb(23,24,26);
+    color:#B1AC8E ;
+    padding-top: 17px;
+    padding-left:10px;
 }
 
 
