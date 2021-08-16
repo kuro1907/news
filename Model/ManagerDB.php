@@ -110,9 +110,7 @@ class ManagerDB
         $statement->bindParam(6, $new->isSelected);
         $statement->bindParam(7, $new->category);
         $statement->bindParam(8, $new->content);
-        $test = $statement->execute();
-        var_dump($test);
-        die();
+        return $statement->execute();
     }
 
     public function getId()

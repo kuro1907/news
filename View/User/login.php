@@ -62,7 +62,7 @@ if (isset($_SESSION['username'])) {
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="/?controller=user&action=forgot_password">Quên mật khẩu ?</a>
+                                        <a class="small" href="/?controller=user&action=forgot">Quên mật khẩu ?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="/?controller=user&action=signup">Chưa có tài khoản ? Tạo tài khoản !</a>

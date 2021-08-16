@@ -60,10 +60,10 @@ $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : NULL;
                 <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
                         <label>Chức vụ :</label>
-                        <select name="role" class="form-control " <?php if ($action == 'details') {
+                        <select name="role" class="form-control " <?php if ($action == 'details' || $user->role == 'manager') {
                                                                         echo 'disabled';
                                                                     } ?>>
-                            <option value="manager" <?php if ($user->role == 'manager') echo 'selected' ?>>Quản trị</option>
+                            <option value="manager" <?php if ($user->role == 'manager') echo ' selected' ?>>Quản trị</option>
                             <option value="user" <?php if ($user->role == 'user') echo 'selected' ?>>Người dùng</option>
                         </select>
 

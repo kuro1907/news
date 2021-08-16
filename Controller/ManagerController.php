@@ -67,7 +67,7 @@ class ManagerController
             $this->managerDb->editUser($password, $firstName, $lastName, $role, $id);
             $message = 'Người dùng đã được chỉnh sửa thành công';
             $_SESSION['message'] = $message;
-            header('Location:/?controller=manager&action=users');
+            include 'View/Manager/usersmanager.php';
         }
     }
 
@@ -81,7 +81,11 @@ class ManagerController
             $id = $_POST['id'];
             $username = $_POST['username'];
             $user = $_SESSION['username'];
-            if ($user == $username) {
+            $role = $_POST['role'];
+            if ($role == 'manager') {
+                $message = ' Xin lỗi, bạn không thể xóa người dùng có quyền quản trị';
+                include 'View/Manager/delete.php';
+            } else if ($user == $username) {
                 $this->managerDb->delete($id);
                 session_destroy();
                 header('Location:/?controller=user&action=signin');
@@ -89,7 +93,7 @@ class ManagerController
                 $this->managerDb->delete($id);
                 $message = 'Người dùng đã được xóa thành công';
                 $_SESSION['message'] = $message;
-                header('Location:/?controller=manager&action=users');;
+                include 'View/Manager/usersmanager.php';
             }
         }
     }
@@ -128,7 +132,7 @@ class ManagerController
             if ($test) {
                 $message = 'Bài viết đã được chỉnh sửa thành công';
                 $_SESSION['message'] = $message;
-                header('Location:/?controller=manager&action=news');
+                include 'View/Manager/newsmanager.php';
             } else {
                 echo 'ngu';
             }
@@ -145,7 +149,7 @@ class ManagerController
             $id = $_POST['id'];
             $this->managerDb->deleteNews($id);
             $message = 'Bài viết đã được xóa thành công';
-            include 'View/Manager/deleteNews.php';
+            include 'View/Manager/newsmanager.php';
         }
     }
 
@@ -168,8 +172,8 @@ class ManagerController
             $test = $this->managerDb->createNew($new);
 
             if ($test) {
-                $success = 'Đăng bài viết thành công';
-                header('Location:/?controller=manager&action=news');
+                $message = 'Đăng bài viết thành công';
+                include 'View/Manager/newsmanager.php';
             } else {
                 echo 'ngu';
             }

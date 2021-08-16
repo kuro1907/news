@@ -23,12 +23,6 @@ class UserController
         $this->userDb = new UserDB($connection->connect());
     }
 
-    public function signup()
-    {
-        include 'View/User/register.php ';
-    }
-
-
     public function register()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -48,14 +42,18 @@ class UserController
 
                 if ($this->userDb->search($user->username)) {
                     $message = 'Tên đăng nhập đã có người sử dụng';
+                    include 'View/User/register.php';
                 } else if ($this->userDb->searchEmail($user->email)) {
                     $message = 'Email đã có người sử dụng';
+                    include 'View/User/register.php';
                 } else {
                     $this->userDb->create($user);
                     $success = 'Đăng ký thành công';
+                    include 'View/User/login.php';
                 }
             }
-            include 'View/User/register.php';
+        } else {
+            include 'View/User/register.php ';
         }
     }
 
@@ -125,7 +123,7 @@ switch ($action) {
         $controller->log_in();
         break;
     case 'signup':
-        $controller->signup();
+        $controller->register();
         break;
     case 'register':
         $controller->register();
@@ -137,6 +135,12 @@ switch ($action) {
         $controller->forgot();
         break;
     case 'users':
+        $users = $controller->user_manager();
+        break;
+    case 'edit':
+        $users = $controller->user_manager();
+        break;
+    case 'delete':
         $users = $controller->user_manager();
         break;
         // case 'edit':

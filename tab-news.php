@@ -11,5 +11,3 @@ foreach ($news as $key => $new) {
             </div>
         </div>';
 }
-?>
-<a href="#"></a>

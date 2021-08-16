@@ -8,7 +8,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php for ($i = 0; $i < 5; $i++) {
+            <?php for ($i = 0; $i < 7; $i++) {
                 echo '
                 <tr>
                     <td>' . ($i + 1) . '</td>
@@ -17,6 +17,11 @@
                 </tr>';
             }
             ?>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><b><i><a href="/?controller=user&action=posts&category=all">Xem thêm</a></i></b></td>
+            </tr>
         </tbody>
     </table>
 </div>

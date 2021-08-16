@@ -30,7 +30,11 @@ class NewsController
     public function getNewsByCategory()
     {
         $category = $_GET['category'];
-        $news = $this->newDb->getNewsByCategory($category);
+        if ($category != 'all') {
+            $news = $this->newDb->getNewsByCategory($category);
+        } else {
+            $news = $this->newDb->getAllNews();
+        }
         include 'category.php';
     }
 

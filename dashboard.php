@@ -65,10 +65,14 @@ if ($_SESSION['role'] !== 'manager') {
                 </a>
             </li>
             <hr class="sidebar-divider">
-
-
-
-
+            <div class="sidebar-heading">
+                Website
+            </div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/index.php" aria-expanded="true">
+                    <span>Trở lại trang chủ</span>
+                </a>
+            </li>
         </ul>
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">

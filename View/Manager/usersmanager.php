@@ -13,13 +13,6 @@ require "Controller/UserController.php";
             </div>
         </nav>
         <div class="container-fluid">
-            <?php
-            if (isset($_SESSION['message'])) {
-                $message = $_SESSION['message'];
-                echo '<p class="alert-info">' . $message . '</p>';
-                unset($_SESSION['message']);
-            }
-            ?>
             <table class="table">
                 <thead>
                     <tr>

@@ -17,6 +17,7 @@
                 <form action="/?controller=manager&action=delete" method="post">
                     <input type="hidden" name="id" value="' . $user->id . '" />
                     <input type="hidden" name="username" value="' . $user->username . '" />
+                    <input type="hidden" name="role" value="' . $user->role . '" />
                     <div class="form-group">
                         <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Thoát</button>
                         <input type="submit" value="Xóa người dùng" class="btn btn-danger" />
